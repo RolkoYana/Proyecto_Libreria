@@ -1,4 +1,6 @@
-public class LibroAudio extends Libro {
+import java.io.Serializable;
+
+public class LibroAudio extends Libro implements Serializable {
     private int duracion;
     private String idioma;
     private int nuevaDuracion;

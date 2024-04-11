@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.List;
 
-public abstract class Libro {
+public abstract class Libro implements Serializable {
 
     protected String titulo, autor, genero;
     protected double precio;

@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class LibroElectronico extends Libro {
+public class LibroElectronico extends Libro implements Serializable {
     String formato;
 
     public LibroElectronico() {

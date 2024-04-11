@@ -1,4 +1,6 @@
-public class LibroFisico extends Libro{
+import java.io.Serializable;
+
+public class LibroFisico extends Libro implements Serializable {
 
     private String ubicacion; //sala + estanteria + balda
     private int numeroCopias;

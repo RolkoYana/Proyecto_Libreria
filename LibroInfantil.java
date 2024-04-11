@@ -1,4 +1,6 @@
-public class LibroInfantil extends Libro {
+import java.io.Serializable;
+
+public class LibroInfantil extends Libro implements Serializable {
     //atributos adicionales
     int edadRecomendada;
     boolean ilustraciones = false;

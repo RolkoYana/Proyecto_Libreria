@@ -19,7 +19,7 @@ public class PruebaLibroInfantil {
         System.out.println("\nPruebas para el libro infantil:");
         System.out.println("Edad recomendada: " + libroli.getEdadRecomendada());
         System.out.println("Tiene ilustraciones: " + libroli.tieneIlustraciones());
-        libroli.contarIlustraciones(libroli.numIlustraciones);
+        libroli.mostrarIlustraciones(libroli.numIlustraciones);
         int edad = 7; // Edad para verificar si es apto para leer el libro
         libroli.verificarEdadApta(edad);
 

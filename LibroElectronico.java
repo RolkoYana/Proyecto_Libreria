@@ -6,18 +6,14 @@ public class LibroElectronico extends Libro {
     public LibroElectronico() {
     }
 
-    public LibroElectronico(String formato) {
-        this.formato = formato;
-    }
+    public LibroElectronico(String formato) {this.formato = formato;}
 
     public LibroElectronico(String titulo, String autor, String genero, double precio, String formato) {
         super(titulo, autor, genero, precio);
         this.formato = formato;
     }
 
-    public String getFormato() {
-        return formato;
-    }
+    public String getFormato() {return formato;}
 
     public void setFormato(String formato) {
         this.formato = formato;
@@ -35,13 +31,13 @@ public class LibroElectronico extends Libro {
         }
     }
 
-    public void convertirAFormato(String nuevoFormato, Scanner sc) {
+    public void convertirAFormato( Scanner sc) {
         System.out.println("a que formato quieres convertir tu libro;");
         String formatoNuevo = sc.next();
 
         if (formatoNuevo == formato) {
             System.out.println("ha elejido el mismo formato");
-        } else System.out.println("su libro ha sido convertido correctamente");
+        } else System.out.println("su libro ha sido convertido correctamente a: "+ formatoNuevo);
         formato = formatoNuevo;
     }
 }

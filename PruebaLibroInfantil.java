@@ -16,12 +16,12 @@ public class PruebaLibroInfantil {
 
 
         // Pruebas para los métodos específicos de LibroInfantil
-//        System.out.println("\nPruebas para el libro infantil:");
-//        System.out.println("Edad recomendada: " + libroli.getEdadRecomendada());
-//        System.out.println("Tiene ilustraciones: " + libroli.tieneIlustraciones(libroli.ilustraciones));
-//        libroli.contarIlustraciones(libroli.numIlustraciones);
-//        int edad = 7; // Edad para verificar si es apto para leer el libro
-//        libroli.verificarEdadApta(edad);
+        System.out.println("\nPruebas para el libro infantil:");
+        System.out.println("Edad recomendada: " + libroli.getEdadRecomendada());
+        System.out.println("Tiene ilustraciones: " + libroli.tieneIlustraciones());
+        libroli.mostrarIlustraciones(libroli.numIlustraciones);
+        int edad = 7; // Edad para verificar si es apto para leer el libro
+        libroli.verificarEdadApta(edad);
 
         for (LibroInfantil librito : libro) {
             System.out.println(librito);

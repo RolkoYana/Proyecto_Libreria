@@ -1,5 +1,7 @@
 import java.io.Serializable;
 
+//comentario prueba
+
 public class LibroFisico extends Libro implements Serializable {
 
     private String ubicacion; //sala + estanteria + balda

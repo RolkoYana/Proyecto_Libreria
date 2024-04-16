@@ -31,7 +31,6 @@ public class LibroFisico extends Libro implements Serializable {
     }
 
     public int agregarCopias(int cantidad){
-
         this.numeroCopias += cantidad;
         return this.numeroCopias;
     }

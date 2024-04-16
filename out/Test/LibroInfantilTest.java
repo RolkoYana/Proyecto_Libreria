@@ -36,6 +36,6 @@ class LibroInfantilTest {
 
     @Test
     void verificarEdadApta() {
-        assertEquals("edad" < (l2.edadRecomendada), 18);
+        assertFalse("edad" < (l2.edadRecomendada), 18);
     }
 }

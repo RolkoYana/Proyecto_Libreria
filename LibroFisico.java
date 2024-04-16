@@ -31,13 +31,24 @@ public class LibroFisico extends Libro implements Serializable {
     }
 
     public int agregarCopias(int cantidad){
-        this.numeroCopias += cantidad;
-        return this.numeroCopias;
+        if (cantidad <= 0) {
+            throw new IllegalArgumentException("La cantidad de copias a agregar es erronea");
+        }
+        else{
+            return this.numeroCopias += cantidad;
+        }
     }
 
     public int eliminarCopias(int cantidad){
-        this.numeroCopias -= cantidad;
-        return this.numeroCopias;
+        if(cantidad > numeroCopias){
+            throw new IllegalArgumentException("El numero de copias a eliminar NO puede ser mayor que el numero de copias existentes");
+        }
+        else if(cantidad <= 0){
+            throw new IllegalArgumentException("La cantidad de copias a eliminar es erronea");
+        }
+        else{
+            return this.numeroCopias -= cantidad;
+        }
     }
 
     @Override

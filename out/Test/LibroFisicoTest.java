@@ -10,15 +10,16 @@ class LibroFisicoTest {
     @BeforeEach
     public void setUp(){
         libro1 = new LibroFisico("Libro1", "Autor1", "Infantil", 9.95, "Planta 1");
+        libro1.setNumeroCopias(5);
     }
 
     @Test
     void agregarCopiasTest() {
-        assertTrue(libro1.agregarCopias(2) > 0); //prueba que num de copias a agregar debe ser mayor a 0
+        assertTrue(libro1.agregarCopias(2) > 0); //test que num de copias a agregar debe ser mayor a 0
     }
 
     @Test
     void eliminarCopiasTest() {
-        assertTrue(libro1.eliminarCopias(4) < libro1.getNumeroCopias());
+        assertTrue(libro1.eliminarCopias(3) <= libro1.getNumeroCopias()); //test que el numero de copias que quedan despues de eliminar es menor al numero de copias que habia
     }
 }

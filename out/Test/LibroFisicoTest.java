@@ -14,12 +14,12 @@ class LibroFisicoTest {
     }
 
     @Test
-    void agregarCopiasTest() {
+    void testAagregarCopias() {
         assertTrue(libro1.agregarCopias(2) > 0); //test que num de copias a agregar debe ser mayor a 0
     }
 
     @Test
-    void eliminarCopiasTest() {
+    void testEliminarCopiasTest() {
         assertTrue(libro1.eliminarCopias(3) <= libro1.getNumeroCopias()); //test que el numero de copias que quedan despues de eliminar es menor al numero de copias que habia
     }
 }

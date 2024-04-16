@@ -59,15 +59,25 @@ public abstract class Libro implements Serializable {
 
     //descuento se representa en por ciento
     public double calcularPrecioConDescuento(double descuento){
-        return precio-(precio * descuento);
+        return precio-(precio * descuento/100);
     }
 
     public void buscarPorAutor(List<Libro> libros, String autor){
-        libros.stream().filter(libro -> libro.getAutor().equalsIgnoreCase(autor)).forEach(System.out::println);
+        if(libros.isEmpty()){
+            System.out.println("La lista de libros esta vacia");
+        }
+        else{
+            libros.stream().filter(libro -> libro.getAutor().equalsIgnoreCase(autor)).forEach(System.out::println);
+        }
     }
 
     public void filtrarPorGenero(List<Libro> libros, String genero){
-        libros.stream().filter(libro -> libro.getGenero().equalsIgnoreCase(genero)).forEach(System.out::println);
+        if(libros.isEmpty()){
+            System.out.println("La lista de libros esta vacia");
+        }
+        else {
+            libros.stream().filter(libro -> libro.getGenero().equalsIgnoreCase(genero)).forEach(System.out::println);
+        }
     }
 
 

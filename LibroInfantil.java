@@ -33,11 +33,15 @@ public class LibroInfantil extends Libro implements Serializable {
     public void mostrarIlustraciones (int numIlustraciones){
         System.out.println("Este libro tiene " + numIlustraciones + " ilustraciones.");
     }
-    public void verificarEdadApta (int edad){
-        if (edadRecomendada < edad){
+    public boolean verificarEdadApta (int edad){
+        if (edadRecomendada <= edad){
             System.out.println("Tu edad es apta para la lectura de este libro");
+            return true;
         }
-        System.out.println("Lo siento, pero tu edad no es apta para la lectura de este libro");
+        else {
+            System.out.println("Lo siento, pero tu edad no es apta para la lectura de este libro");
+            return false;
+        }
     }
 
     @Override

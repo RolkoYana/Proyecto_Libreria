@@ -24,18 +24,18 @@ class LibroInfantilTest {
         System.out.println("Tests terminados");
     }
     @Test
-    void mostrarIlustraciones() {
+    void testMostrarIlustraciones() {
         l1.mostrarIlustraciones(l1.numIlustraciones); //y aqui poder ver si se han añadido ilustraciones arriba o no
         //assertTrue(true);
     }
 
     @Test
-    void getEdadRecomendada(){
+    void testGetEdadRecomendada(){
         assertEquals(18,l2.getEdadRecomendada());
     } //aqui compruebo que realmente me devuelve mi edad recomendada anterior
 
     @Test
-    void verificarEdadApta() {
+    void testVerificarEdadApta() {
         assertTrue(l1.verificarEdadApta(11));
     }
 }

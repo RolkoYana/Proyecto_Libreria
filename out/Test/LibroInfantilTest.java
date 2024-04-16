@@ -6,12 +6,10 @@ import org.junit.jupiter.api.Test;
 
 class LibroInfantilTest {
     LibroInfantil l1, l2;
-    Libro l;
     @BeforeEach
     public void setUpInstance(){
         l1 = new LibroInfantil(11, true, 12);//aqui deberiamos poder añadir un libro
         l2 = new LibroInfantil(18, false, 0);
-        //l = new Libro("Los gatitos","Ana Silva","terror",19);
     }
     @BeforeEach
     public void iniciarTests(){

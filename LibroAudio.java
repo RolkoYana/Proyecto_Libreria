@@ -1,24 +1,22 @@
 import java.io.Serializable;
+import java.util.Scanner;
 
 public class LibroAudio extends Libro implements Serializable {
     private int duracion;
     private String idioma;
-    private int nuevaDuracion;
 
     public LibroAudio() {
     }
 
-    public LibroAudio(int duracion, String idioma, int nuevaDuracion) {
+    public LibroAudio(int duracion, String idioma) {
         this.duracion = duracion;
         this.idioma = idioma;
-        this.nuevaDuracion = nuevaDuracion;
     }
 
-    public LibroAudio(String titulo, String autor, String genero, double precio, int duracion, String idioma, int nuevaDuracion) {
+    public LibroAudio(String titulo, String autor, String genero, double precio, int duracion, String idioma) {
         super(titulo, autor, genero, precio);
         this.duracion = duracion;
         this.idioma = idioma;
-        this.nuevaDuracion = nuevaDuracion;
     }
 
     public int getDuracion() {
@@ -37,29 +35,19 @@ public class LibroAudio extends Libro implements Serializable {
         this.idioma = idioma;
     }
 
-    public int getNuevaDuracion() {
-        return nuevaDuracion;
-    }
-
-    public void setNuevaDuracion(int nuevaDuracion) {
-        this.nuevaDuracion = nuevaDuracion;
-    }
-
-    public void calcularTasaBitAlta() {
-        nuevaDuracion = (int) (duracion * 0.8);
-    }
-
-    public void calcularTasaBitBaja() {
-        nuevaDuracion = (int) (duracion * 1.2);
-    }
-
-    public void calcularTasaBits(String tasa) {
+    public double calcularTasaBits() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese la tasa de bits con la que dispone actualmente: \n" +
+                "1_Alta\n" +
+                "2_Baja");
+        String tasa = scanner.next();
         if (tasa.equalsIgnoreCase("alta")) {
-            calcularTasaBitAlta();
+            return (duracion * 0.8);
         } else if (tasa.equalsIgnoreCase("baja")) {
-            calcularTasaBitBaja();
+            return  (duracion * 1.2);
         } else {
             System.out.println("El valor introducido es incorrecto");
+            return 0;
         }
     }
 
@@ -68,7 +56,7 @@ public class LibroAudio extends Libro implements Serializable {
         return super.toString() +
                 ", idioma='" + idioma + '\'' +
                 ", duracion normal=" + duracion +
-                ", duracion real=" + nuevaDuracion +
+                ", duracion real=" + calcularTasaBits() +
                 '}';
     }
 }

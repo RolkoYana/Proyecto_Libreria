@@ -35,6 +35,14 @@ public class LibroAudio extends Libro implements Serializable {
         this.idioma = idioma;
     }
 
+    public double calcularTasaBitsAlta() {
+        return duracion * 0.8;
+    }
+
+    public double calcularTasaBitsBaja() {
+        return duracion * 1.2;
+    }
+
     public double calcularTasaBits() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese la tasa de bits con la que dispone actualmente: \n" +
@@ -42,22 +50,21 @@ public class LibroAudio extends Libro implements Serializable {
                 "2_Baja");
         String tasa = scanner.next();
         if (tasa.equalsIgnoreCase("alta")) {
-            return (duracion * 0.8);
+            return calcularTasaBitsAlta();
         } else if (tasa.equalsIgnoreCase("baja")) {
-            return  (duracion * 1.2);
+            return calcularTasaBitsBaja();
         } else {
             System.out.println("El valor introducido es incorrecto");
-            return 0;
+            return -1; // Or some default value to indicate failure
         }
     }
 
     @Override
     public String toString() {
+        double tasaBits = calcularTasaBits();
         return super.toString() +
                 ", idioma='" + idioma + '\'' +
                 ", duracion normal=" + duracion +
-                ", duracion real=" + calcularTasaBits() +
-                '}';
+                ", duracion real=" + tasaBits;
     }
 }
-

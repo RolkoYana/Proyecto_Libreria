@@ -11,7 +11,7 @@ class LibroInfantilTest {
     public void setUpInstance(){
         l1 = new LibroInfantil(11, true, 12);//aqui deberiamos poder añadir un libro
         l2 = new LibroInfantil(18, false, 0);
-        l = new Libro("Los gatitos","Ana Silva","terror",19);
+        //l = new Libro("Los gatitos","Ana Silva","terror",19);
     }
     @BeforeEach
     public void iniciarTests(){
@@ -36,6 +36,6 @@ class LibroInfantilTest {
 
     @Test
     void verificarEdadApta() {
-        assertFalse("edad" < (l2.edadRecomendada), 18);
+        assertTrue(l1.verificarEdadApta(11));
     }
 }

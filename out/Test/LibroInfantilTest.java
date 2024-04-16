@@ -10,6 +10,7 @@ class LibroInfantilTest {
         System.out.println(":: beforeEach ::");
         //esto es para establecer el valor de variables que no queremos tener en duplicado en cada uno de los tests
         //miara yana!
+        //
     }
     @Test
     void mostrarIlustraciones() {

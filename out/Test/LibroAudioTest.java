@@ -3,8 +3,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LibroAudioTest {
 
-
-
     @Test
     void calcularTasaBitAltaTest() {
         LibroAudio libro = new LibroAudio("Juan el carpintero","Juana","Accion",10,15,"español");

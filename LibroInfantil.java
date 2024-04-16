@@ -7,6 +7,13 @@ public class LibroInfantil extends Libro implements Serializable {
     int numIlustraciones;
 
     public LibroInfantil(){}
+
+    public LibroInfantil(int edadRecomendada, boolean ilustraciones, int numIlustraciones) {
+        this.edadRecomendada = edadRecomendada;
+        this.ilustraciones = ilustraciones;
+        this.numIlustraciones = numIlustraciones;
+    }
+
     public LibroInfantil(String titulo, String autor, String genero, double precio, int edadRecomendada, boolean ilustraciones, int numIlustraciones) {
         super(titulo, autor, genero, precio);
         this.edadRecomendada = edadRecomendada;

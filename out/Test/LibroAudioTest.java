@@ -5,11 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibroAudioTest {
-    LibroAudio libro;
+    LibroAudio libro, libro1;
 
     @BeforeEach
     void setUp() {
-        libro = new LibroAudio("Juan el carpintero", "Juana", "Accion", 10, 15, "español");
+        libro = new LibroAudio("Juan el carpintero", "Juana", "Accion", 10, 15, "español","alta");
+        libro1 = new LibroAudio("Juan el fontanero","Juan","Accion",10,10,"ingles","baja");
     }
 
     @Test
@@ -19,8 +20,7 @@ class LibroAudioTest {
 
     @Test
     void calcularTasaBitBajaTest() {
-        libro.setDuracion(10);
-        assertEquals(12, libro.calcularTasaBitsBaja());
+        assertEquals(12, libro1.calcularTasaBitsBaja());
     }
 
     @AfterAll //solo los all son static, instanciar un sola vez

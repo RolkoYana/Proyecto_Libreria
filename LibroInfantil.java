@@ -30,6 +30,15 @@ public class LibroInfantil extends Libro implements Serializable {
     public void setIlustraciones(boolean ilustraciones) {
         this.ilustraciones = ilustraciones;
     }
+
+    public int getNumIlustraciones() {
+        return numIlustraciones;
+    }
+
+    public void setNumIlustraciones(int numIlustraciones) {
+        this.numIlustraciones = numIlustraciones;
+    }
+
     public void mostrarIlustraciones (int numIlustraciones){
         System.out.println("Este libro tiene " + numIlustraciones + " ilustraciones.");
     }

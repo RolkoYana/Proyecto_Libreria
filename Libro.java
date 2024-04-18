@@ -59,7 +59,7 @@ public abstract class Libro implements Serializable {
 
     //descuento se representa en por ciento
     public double calcularPrecioConDescuento(double descuento){
-        return precio-(precio * descuento);
+        return precio-(precio * descuento / 100);
     }
 
     public void buscarPorAutor(List<Libro> libros, String autor){

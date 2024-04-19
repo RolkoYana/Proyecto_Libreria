@@ -1,22 +1,25 @@
-public class LibroAudio extends Libro {
+import java.io.Serializable;
+import java.util.Scanner;
+
+public class LibroAudio extends Libro implements Serializable {
     private int duracion;
     private String idioma;
-    private int nuevaDuracion;
+    private String tasa;
 
     public LibroAudio() {
     }
 
-    public LibroAudio(int duracion, String idioma, int nuevaDuracion) {
+    public LibroAudio(int duracion, String idioma, String tasa) {
         this.duracion = duracion;
         this.idioma = idioma;
-        this.nuevaDuracion = nuevaDuracion;
+        this.tasa = tasa;
     }
 
-    public LibroAudio(String titulo, String autor, String genero, double precio, int duracion, String idioma, int nuevaDuracion) {
+    public LibroAudio(String titulo, String autor, String genero, double precio, int duracion, String idioma, String tasa) {
         super(titulo, autor, genero, precio);
         this.duracion = duracion;
         this.idioma = idioma;
-        this.nuevaDuracion = nuevaDuracion;
+        this.tasa = tasa;
     }
 
     public int getDuracion() {
@@ -35,30 +38,29 @@ public class LibroAudio extends Libro {
         this.idioma = idioma;
     }
 
-    public int getNuevaDuracion() {
-        return nuevaDuracion;
+    public String getTasa() {
+        return tasa;
     }
 
-    public void setNuevaDuracion(int nuevaDuracion) {
-        this.nuevaDuracion = nuevaDuracion;
+    public void setTasa(String tasa) {
+        this.tasa = tasa;
     }
 
-    public void calcularTasaBitAlta() {
-        nuevaDuracion = (int) (duracion * 0.8);
+    public double calcularTasaBitsAlta() {
+        return duracion * 0.8;
     }
 
-    public void calcularTasaBitBaja() {
-        nuevaDuracion = (int) (duracion * 1.2);
+    public double calcularTasaBitsBaja() {
+        return duracion * 1.2;
     }
 
-    public void calcularTasaBits(String tasa) {
+    public double calcularTasaBits() {
         if (tasa.equalsIgnoreCase("alta")) {
-            calcularTasaBitAlta();
+            return calcularTasaBitsAlta();
         } else if (tasa.equalsIgnoreCase("baja")) {
-            calcularTasaBitBaja();
-        } else {
-            System.out.println("El valor introducido es incorrecto");
+            return calcularTasaBitsBaja();
         }
+        return -1;
     }
 
     @Override
@@ -66,8 +68,6 @@ public class LibroAudio extends Libro {
         return super.toString() +
                 ", idioma='" + idioma + '\'' +
                 ", duracion normal=" + duracion +
-                ", duracion real=" + nuevaDuracion +
-                '}';
+                ", duracion real=" + calcularTasaBits();
     }
 }
-

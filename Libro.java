@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.List;
 
-public abstract class Libro {
+public abstract class Libro implements Serializable {
 
     protected String titulo, autor, genero;
     protected double precio;
@@ -58,7 +59,7 @@ public abstract class Libro {
 
     //descuento se representa en por ciento
     public double calcularPrecioConDescuento(double descuento){
-        return precio-(precio * descuento);
+        return precio-(precio * descuento / 100);
     }
 
     public void buscarPorAutor(List<Libro> libros, String autor){

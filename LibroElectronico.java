@@ -32,10 +32,7 @@ public class LibroElectronico extends Libro implements Serializable {
         }
     }
 
-    public void convertirAFormato( Scanner sc) {
-        System.out.println("a que formato quieres convertir tu libro;");
-        String formatoNuevo = sc.next();
-
+    public void convertirAFormato( String formatoNuevo) {
         if (formatoNuevo == formato) {
             System.out.println("ha elejido el mismo formato");
         } else System.out.println("su libro ha sido convertido correctamente a: "+ formatoNuevo);

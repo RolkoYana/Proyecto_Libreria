@@ -13,7 +13,7 @@ public class PruebaLibroElectronico {
         libro.setPrecio(121313);
         libro.setTitulo("Penelope");
         libro.setFormato("apple");
-        libro.verificarCompatibilidadDispositivo("samsung", scanner);
+        libro.verificarCompatibilidadDispositivo("samsung");
         //libro.convertirAFormato(scanner);
         libros.add(libro);
     }

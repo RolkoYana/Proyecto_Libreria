@@ -11,33 +11,32 @@ import static org.junit.jupiter.api.Assertions.*;
 class LibroElectronicoTest {
 
         private LibroElectronico libro;
-        private Scanner scanner;
 
         @BeforeEach
         public void setUp() {
-            libro = new LibroElectronico("Formato1");
-            scanner = new Scanner(System.in);
+            libro = new LibroElectronico("pdf");
         }
 
         @AfterEach
         public void tearDown() {
-            scanner.close();
+
         }
 
     @Test
-    void verificarCompatibilidadDispositivoTest() {
-        Scanner sc = new Scanner(new ByteArrayInputStream("Dispositivo1\nFormato1".getBytes()));
-        assertTrue(libro.verificarCompatibilidadDispositivo("Dispositivo1", sc));
-        sc = new Scanner(new ByteArrayInputStream("Dispositivo2\nFormato2".getBytes()));
-        assertFalse(libro.verificarCompatibilidadDispositivo("Dispositivo1", sc));
+    public void verificarCompatibilidadDispositivoTest() {
+        assertTrue(libro.verificarCompatibilidadDispositivo("movil"));
+        assertTrue(libro.verificarCompatibilidadDispositivo("tablet"));
+        assertTrue(libro.verificarCompatibilidadDispositivo("ebook"));
+        assertFalse(libro.verificarCompatibilidadDispositivo("ordenador"));
+        assertFalse(libro.verificarCompatibilidadDispositivo("telefono"));
     }
 
     @Test
     void convertirAFormatoTest() {
-        libro.convertirAFormato("Formato1");
-        assertEquals("Formato1", libro.getFormato());
-        libro.convertirAFormato("Formato2");
-        assertEquals("Formato2", libro.getFormato());
+        libro.convertirAFormato("epub");
+        assertEquals("epub", libro.getFormato());
+        libro.convertirAFormato("txt");
+        assertEquals("txt", libro.getFormato());
     }
     @AfterAll
     public static void cleanUp() {

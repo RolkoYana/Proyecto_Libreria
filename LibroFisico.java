@@ -12,21 +12,13 @@ public class LibroFisico extends Libro implements Serializable {
         this.ubicacion = ubicacion;
     }
 
-    public String getUbicacion() {
-        return ubicacion;
-    }
+    public String getUbicacion() {return ubicacion;}
 
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
-    }
+    public void setUbicacion(String ubicacion) {this.ubicacion = ubicacion;}
 
-    public int getNumeroCopias() {
-        return numeroCopias;
-    }
+    public int getNumeroCopias() {return numeroCopias;}
 
-    public void setNumeroCopias(int numeroCopias) {
-        this.numeroCopias = numeroCopias;
-    }
+    public void setNumeroCopias(int numeroCopias) {this.numeroCopias = numeroCopias;}
 
     public int agregarCopias(int cantidad){
         if (cantidad <= 0) {

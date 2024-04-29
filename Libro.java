@@ -15,9 +15,8 @@ public abstract class Libro implements Serializable {
         this.precio = precio;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
+    public String getTitulo() {return titulo;
+    } // cambios
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;

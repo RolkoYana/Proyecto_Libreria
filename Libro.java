@@ -15,36 +15,21 @@ public abstract class Libro implements Serializable {
         this.precio = precio;
     }
 
-    public String getTitulo() {return titulo;
-    } // cambios
+    public String getTitulo() {return titulo;}
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
+    public void setTitulo(String titulo) {this.titulo = titulo;}
 
-    public String getAutor() {
-        return autor;
-    }
+    public String getAutor() {return autor;}
 
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
+    public void setAutor(String autor) {this.autor = autor;}
 
-    public String getGenero() {
-        return genero;
-    }
+    public String getGenero() {return genero;}
 
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
+    public void setGenero(String genero) {this.genero = genero;}
 
-    public double getPrecio() {
-        return precio;
-    }
+    public double getPrecio() {return precio;}
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
+    public void setPrecio(double precio) {this.precio = precio;}
 
     @Override
     public String toString() {
@@ -68,6 +53,4 @@ public abstract class Libro implements Serializable {
     public void filtrarPorGenero(List<Libro> libros, String genero){
         libros.stream().filter(libro -> libro.getGenero().equalsIgnoreCase(genero)).forEach(System.out::println);
     }
-
-
 }

@@ -4,25 +4,18 @@ import java.util.Scanner;
 public class LibroElectronico extends Libro implements Serializable {
     String formato;
 
-    public LibroElectronico() {
-    }
+    public LibroElectronico() {}
 
-    public LibroElectronico(String formato) {
-        this.formato = formato;
-    }
+    public LibroElectronico(String formato) {this.formato = formato;}
 
     public LibroElectronico(String titulo, String autor, String genero, double precio, String formato) {
         super(titulo, autor, genero, precio);
         this.formato = formato;
     }
 
-    public String getFormato() {
-        return formato;
-    }
+    public String getFormato() {return formato;}
 
-    public void setFormato(String formato) {
-        this.formato = formato;
-    }
+    public void setFormato(String formato) {this.formato = formato;}
 
     public boolean verificarCompatibilidadDispositivo(String dispositivo) {
         switch (dispositivo.toLowerCase()) {

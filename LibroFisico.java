@@ -22,6 +22,7 @@ public class LibroFisico extends Libro implements Serializable {
 
     public int agregarCopias(int cantidad){
         if (cantidad <= 0) {
+            //lanza excepcion en caso de que la cantidad sea <= 0
             throw new IllegalArgumentException("La cantidad de copias a agregar es erronea");
         }
         else{

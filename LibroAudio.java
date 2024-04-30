@@ -37,6 +37,7 @@ public class LibroAudio extends Libro implements Serializable {
 
     public double calcularTasaBitsBaja() {return duracion * 1.2;}
 
+    //el metodo extra (no esta definido en el documento de modulo)
     public double calcularTasaBits() {
         if (tasa.equalsIgnoreCase("alta")) {
             return calcularTasaBitsAlta();

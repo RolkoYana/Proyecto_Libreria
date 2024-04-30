@@ -6,8 +6,7 @@ public class LibroAudio extends Libro implements Serializable {
     private String idioma;
     private String tasa;
 
-    public LibroAudio() {
-    }
+    public LibroAudio() {}
 
     public LibroAudio(int duracion, String idioma, String tasa) {
         this.duracion = duracion;
@@ -22,37 +21,21 @@ public class LibroAudio extends Libro implements Serializable {
         this.tasa = tasa;
     }
 
-    public int getDuracion() {
-        return duracion;
-    }
+    public int getDuracion() {return duracion;}
 
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
-    }
+    public void setDuracion(int duracion) {this.duracion = duracion;}
 
-    public String getIdioma() {
-        return idioma;
-    }
+    public String getIdioma() {return idioma;}
 
-    public void setIdioma(String idioma) {
-        this.idioma = idioma;
-    }
+    public void setIdioma(String idioma) {this.idioma = idioma;}
 
-    public String getTasa() {
-        return tasa;
-    }
+    public String getTasa() {return tasa;}
 
-    public void setTasa(String tasa) {
-        this.tasa = tasa;
-    }
+    public void setTasa(String tasa) {this.tasa = tasa;}
 
-    public double calcularTasaBitsAlta() {
-        return duracion * 0.8;
-    }
+    public double calcularTasaBitsAlta() {return duracion * 0.8;}
 
-    public double calcularTasaBitsBaja() {
-        return duracion * 1.2;
-    }
+    public double calcularTasaBitsBaja() {return duracion * 1.2;}
 
     public double calcularTasaBits() {
         if (tasa.equalsIgnoreCase("alta")) {

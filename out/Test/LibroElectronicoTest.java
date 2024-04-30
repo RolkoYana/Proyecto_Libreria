@@ -17,11 +17,6 @@ class LibroElectronicoTest {
             libro = new LibroElectronico("pdf");
         }
 
-        @AfterEach
-        public void tearDown() {
-
-        }
-
     @Test
     public void verificarCompatibilidadDispositivoTest() {
         assertTrue(libro.verificarCompatibilidadDispositivo("movil"));

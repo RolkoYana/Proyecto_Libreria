@@ -1,7 +1,6 @@
 import java.io.Serializable;
 
 public class LibroInfantil extends Libro implements Serializable {
-    //atributos adicionales
     int edadRecomendada;
     boolean ilustraciones = false;
     int numIlustraciones;
@@ -21,23 +20,16 @@ public class LibroInfantil extends Libro implements Serializable {
         this.numIlustraciones = numIlustraciones;
     }
 
-    //métodos adicionales
     public int getEdadRecomendada() {return edadRecomendada;}
     public void setEdadRecomendada(int edadRecomendada) {this.edadRecomendada = edadRecomendada;}
     public boolean tieneIlustraciones() {
         return ilustraciones;
     }
-    public void setIlustraciones(boolean ilustraciones) {
-        this.ilustraciones = ilustraciones;
-    }
+    public void setIlustraciones(boolean ilustraciones) {this.ilustraciones = ilustraciones;}
 
-    public int getNumIlustraciones() {
-        return numIlustraciones;
-    }
+    public int getNumIlustraciones() {return numIlustraciones;}
 
-    public void setNumIlustraciones(int numIlustraciones) {
-        this.numIlustraciones = numIlustraciones;
-    }
+    public void setNumIlustraciones(int numIlustraciones) {this.numIlustraciones = numIlustraciones;}
 
     public void mostrarIlustraciones (int numIlustraciones){
         System.out.println("Este libro tiene " + numIlustraciones + " ilustraciones.");

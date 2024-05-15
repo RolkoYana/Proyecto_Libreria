@@ -16,10 +16,20 @@ class LibroFisicoTest {
     @Test
     void agregarCopiasTest() {
         assertTrue(libro1.agregarCopias(2) > 0); //test que num de copias a agregar debe ser mayor a 0
+        assertThrows(IllegalArgumentException.class, () ->{ //test que el numero de copia a agregar no puede ser <= 0
+            libro1.agregarCopias(0);
+        });
     }
 
     @Test
     void eliminarCopiasTest() {
-        assertTrue(libro1.eliminarCopias(3) <= libro1.getNumeroCopias()); //test que el numero de copias que quedan despues de eliminar es menor al numero de copias que habia
+        assertTrue(libro1.getNumeroCopias() >= libro1.eliminarCopias(3)); //test que la cantidad de copias ha reducido
+        assertThrows(IllegalArgumentException.class, () ->{ //test que el numero de copias a eliminar no puede ser mayor que cantidad de copias existentes
+            libro1.eliminarCopias(6);
+        });
+
+        assertThrows(IllegalArgumentException.class, ()->{ //test que el numero de copia a eliminar no puede ser <= 0
+            libro1.eliminarCopias(0);
+        });
     }
 }
